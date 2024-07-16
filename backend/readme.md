@@ -1,0 +1,1 @@
+to run the server `go run ./cmd/api` on path /backend
