@@ -20,6 +20,7 @@ func (app *application) Login(w http.ResponseWriter, r *http.Request) {
 	var payload jsonResponse
 	err := json.NewDecoder(r.Body).Decode(&creds)
 	if err != nil {
+		//send error message
 		app.errorLog.Println("Invalid json")
 		payload.Error = true
 		payload.Message = "Invalid json"
@@ -35,7 +36,10 @@ func (app *application) Login(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
+	//TODO	authentication
 	app.infoLog.Println(creds.UserName, creds.Password)
+
+	//send back error message
 	payload.Error = false
 	payload.Message = "Signed in"
 	out, err := json.MarshalIndent(payload, "", "\t")
