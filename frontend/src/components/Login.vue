@@ -1,7 +1,7 @@
   <script setup>
   import { ref } from 'vue'
-  import FormTag from './forms/FormTag.vue'
-  import TextInput from './forms/TextInput.vue'
+  import FormTag from '@/components/forms/FormTag.vue'
+  import TextInput from '@/components/forms/TextInput.vue'
   
   const email = ref("")
   const password = ref("")
